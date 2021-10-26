@@ -2,13 +2,6 @@
 
 **多线程**：
 ```
-# python3
-# -*- coding: utf-8 -*-
-# @Time    : 2021/10/26 12:36
-# @Author  : yzyyz
-# @Email   :  youzyyz1384@qq.com
-# @File    : th.py
-# @Software: PyCharm
 import threading
 import time
 import tianqi
@@ -41,13 +34,6 @@ if __name__ == '__main__':
 
 **功能实现**：
 ```
-# python3
-# -*- coding: utf-8 -*-
-# @Time    : 2021/10/11 21:24
-# @Author  : yzyyz
-# @Email   :  youzyyz1384@qq.com
-# @File    : tianqi.py
-# @Software: PyCharm
 import requests
 from bs4 import BeautifulSoup
 import sqlite3
