@@ -16,7 +16,12 @@ from snapshot_selenium import snapshot
 
 
 
-url = 'http://www.tianqihoubao.com/lishi/yangling/month/'
+# url = 'http://www.tianqihoubao.com/lishi/yangling/month/'
+urls=[
+    f"http://www.tianqihoubao.com/lishi/yangling/month/20{wyear}10.html"
+    for wyear in range(11,22)
+]
+
 
 def ask_url(url):
     headers = {
@@ -116,18 +121,17 @@ def draw(url):
             yaxis_opts=opts.AxisOpts(name="温度(℃)"),
         )
     )
+    make_snapshot(snapshot, line1.render(), "%s.png"%year) #渲染图片
     return line1
     # line1.render('pyecharts-line.html') # 生成网页文件
-    # make_snapshot(snapshot, line1.render(), "%s.png"%year) #渲染图片
+
 
 if __name__ == '__main__':
     from time import time
     start = time()
     page = Page()
-    for i in range(11):
-        askurl=url+str(2010+i+1)+'10.html'
-        print(askurl)
-        line=draw(askurl)
+    for url in urls:
+        line=draw(url)
         page.add(line)
     page.render("test.html")
     end = time()
